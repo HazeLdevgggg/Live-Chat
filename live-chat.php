@@ -3,10 +3,7 @@
         $_SESSION['pass'];
         $_SESSION['name'];
         try{
-            $servername = 'sportmarludev.mysql.db'; 
-            $username = 'sportmarludev';
-            $password = 'DevMadein34'; 
-            $dbname = 'sportmarludev'; 
+            include("config/db_config.php");
             $connection = new PDO("mysql:host=$servername;dbname=$dbname",$username, $password); 
             $connection -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $stmt = $connection->prepare("SELECT * FROM user WHERE username=:username");
